@@ -13,9 +13,14 @@ J = 0;
 % Instructions: Compute the cost of a particular choice of theta
 %               You should set J to the cost.
 
+for i = 1:m
+  h_theta_x = theta' * X(i,:)';
+  inner_diff = h_theta_x - y(i);
+  inner_diff_squared = inner_diff ^ 2;
+  J += inner_diff_squared;
+endfor
 
-
-
+J /= (2 * m);
 
 % =========================================================================
 
